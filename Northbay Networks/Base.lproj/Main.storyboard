@@ -108,7 +108,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="8Aa-Lr-TtD">
-                                        <rect key="frame" x="91" y="54" width="193" height="29"/>
+                                        <rect key="frame" x="16" y="54" width="343" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
                                             <segment title="Delivery"/>
@@ -120,7 +120,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <textField opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date and Time" textAlignment="natural" minimumFontSize="17" id="ZTS-Sz-owu">
-                                        <rect key="frame" x="16" y="121" width="343" height="25"/>
+                                        <rect key="frame" x="16" y="116" width="343" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
@@ -130,7 +130,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Uber Inc." textAlignment="natural" minimumFontSize="17" id="umo-tl-kdx">
-                                        <rect key="frame" x="16" y="171" width="351" height="25"/>
+                                        <rect key="frame" x="16" y="167" width="351" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
@@ -140,7 +140,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1540 Market St." textAlignment="natural" minimumFontSize="17" id="58e-3f-ool">
-                                        <rect key="frame" x="16" y="221" width="351" height="25"/>
+                                        <rect key="frame" x="16" y="218" width="351" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
@@ -150,11 +150,11 @@
                                         </connections>
                                     </textField>
                                     <mapView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" id="sYn-Qe-EwA">
-                                        <rect key="frame" x="16" y="254" width="343" height="203"/>
+                                        <rect key="frame" x="16" y="252" width="343" height="203"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </mapView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K8F-cz-K6D">
-                                        <rect key="frame" x="16" y="480" width="40" height="29"/>
+                                        <rect key="frame" x="16" y="481" width="40" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.1960784314" green="0.26274509800000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
@@ -162,21 +162,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="LWd-g2-CCP">
-                                        <rect key="frame" x="16" y="480" width="241" height="29"/>
+                                        <rect key="frame" x="16" y="481" width="241" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="i4g-4V-dHg" id="4pW-ie-Yfn"/>
                                         </connections>
                                     </scrollView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ESTIMATE HOW LONG THE EVENT WILL TAKE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z8f-wA-HoF">
-                                        <rect key="frame" x="18" y="465" width="341" height="15"/>
+                                        <rect key="frame" x="18" y="463" width="341" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="Rge-FH-0yN">
-                                        <rect key="frame" x="265" y="480" width="94" height="29"/>
+                                        <rect key="frame" x="265" y="481" width="94" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.1960784314" green="0.26274509800000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
@@ -184,26 +184,52 @@
                                         </connections>
                                     </stepper>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SET THE DATE AND TIME OF THE EVENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wqf-76-y0z">
-                                        <rect key="frame" x="16" y="104" width="341" height="15"/>
+                                        <rect key="frame" x="16" y="98" width="341" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SET THE DATE AND TIME OF THE EVENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M77-xc-upa">
-                                        <rect key="frame" x="16" y="154" width="341" height="15"/>
+                                        <rect key="frame" x="16" y="149" width="341" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SET THE ADDRESS OF THE EVENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zq9-Z2-oq7">
-                                        <rect key="frame" x="18" y="204" width="341" height="15"/>
+                                        <rect key="frame" x="18" y="200" width="341" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ADD ITEMS BEING PICKED UP BELOW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NKZ-B1-2n3">
+                                        <rect key="frame" x="16" y="518" width="341" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" tag="4" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Item" textAlignment="natural" minimumFontSize="17" id="sTt-6X-z9H">
+                                        <rect key="frame" x="16" y="536" width="341" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="i4g-4V-dHg" id="5mR-yW-jOL"/>
+                                        </connections>
+                                    </textField>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8tZ-Ne-vp7">
+                                        <rect key="frame" x="16" y="569" width="341" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="i4g-4V-dHg" id="XOI-5J-Zdx"/>
+                                            <outlet property="delegate" destination="i4g-4V-dHg" id="GRZ-AG-gpa"/>
+                                        </connections>
+                                    </tableView>
                                 </subviews>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="44" maxX="0.0" maxY="0.0"/>
                             </scrollView>
@@ -260,6 +286,7 @@
                         <outlet property="duration" destination="K8F-cz-K6D" id="wig-Kt-GRA"/>
                         <outlet property="durationScroll" destination="LWd-g2-CCP" id="9qM-bg-Uz7"/>
                         <outlet property="durationStep" destination="Rge-FH-0yN" id="DnE-Yv-A2Q"/>
+                        <outlet property="itemTable" destination="8tZ-Ne-vp7" id="Eff-re-82i"/>
                         <outlet property="map" destination="sYn-Qe-EwA" id="Hfm-3N-kBn"/>
                         <outlet property="progress" destination="Luo-Ff-kSD" id="zvC-aU-39i"/>
                         <outlet property="scroll" destination="hTp-jH-Tft" id="C6w-SN-LV9"/>
@@ -268,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJ4-DJ-ZtU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="-234"/>
+            <point key="canvasLocation" x="112.5" y="-234"/>
         </scene>
     </scenes>
     <resources>

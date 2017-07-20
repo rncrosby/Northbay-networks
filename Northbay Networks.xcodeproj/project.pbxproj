@@ -21,6 +21,8 @@
 		ADF766641F0DA00D0060F6FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF766631F0DA00D0060F6FF /* main.m */; };
 		ADF7666E1F0DA0AA0060F6FF /* jobObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF7666C1F0DA09D0060F6FF /* jobObject.m */; };
 		ADF766791F0DA60C0060F6FF /* References.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF766771F0DA6060060F6FF /* References.m */; };
+		D445C1821F206E3A00FA3302 /* itemsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D445C1801F206E3A00FA3302 /* itemsCell.m */; };
+		D445C1831F206E3A00FA3302 /* itemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D445C1811F206E3A00FA3302 /* itemsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,9 @@
 		ADF7666D1F0DA09D0060F6FF /* jobObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jobObject.h; sourceTree = "<group>"; };
 		ADF766771F0DA6060060F6FF /* References.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = References.m; sourceTree = "<group>"; };
 		ADF766781F0DA6060060F6FF /* References.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = References.h; sourceTree = "<group>"; };
+		D445C17F1F206E3A00FA3302 /* itemsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = itemsCell.h; sourceTree = "<group>"; };
+		D445C1801F206E3A00FA3302 /* itemsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = itemsCell.m; sourceTree = "<group>"; };
+		D445C1811F206E3A00FA3302 /* itemsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = itemsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +115,9 @@
 				AD3275A61F0FFB7200B20DE7 /* plus.png */,
 				AD2900A11F200BE6001DB236 /* refresh.png */,
 				AD2900A31F200F05001DB236 /* forward.png */,
+				D445C17F1F206E3A00FA3302 /* itemsCell.h */,
+				D445C1801F206E3A00FA3302 /* itemsCell.m */,
+				D445C1811F206E3A00FA3302 /* itemsCell.xib */,
 			);
 			path = "Northbay Networks";
 			sourceTree = "<group>";
@@ -179,6 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D445C1831F206E3A00FA3302 /* itemsCell.xib in Resources */,
 				AD2900A41F200F0D001DB236 /* forward.png in Resources */,
 				AD2900A21F200C55001DB236 /* refresh.png in Resources */,
 				AD3275A81F0FFB7F00B20DE7 /* plus.png in Resources */,
@@ -201,6 +210,7 @@
 				ADF766591F0DA00D0060F6FF /* ViewController.m in Sources */,
 				ADCE94FD1F1DA084005296B1 /* createEventViewController.m in Sources */,
 				ADF766641F0DA00D0060F6FF /* main.m in Sources */,
+				D445C1821F206E3A00FA3302 /* itemsCell.m in Sources */,
 				ADF766561F0DA00D0060F6FF /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

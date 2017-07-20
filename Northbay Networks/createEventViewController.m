@@ -15,13 +15,14 @@
 @implementation createEventViewController
 
 - (void)viewDidLoad {
+    items = [[NSMutableArray alloc] init];
     durationNumber = 0.25;
     isDelivery = YES;
     oldValue = 0;
     durationScroll.contentSize = CGSizeMake(1200, durationScroll.frame.size.height);
     durationScroll.contentOffset = CGPointMake(600, 0);
     lastX = 600;
-    scroll.contentSize = CGSizeMake([References screenWidth], [References screenHeight]-44);
+    scroll.contentSize = CGSizeMake([References screenWidth], [self.view viewWithTag:4].frame.origin.y + 1000);
     scroll.frame = CGRectMake(0, 0, [References screenWidth], [References screenHeight]);
     [References cornerRadius:map radius:8.0f];
     [References cornerRadius:duration radius:8.0f];
@@ -77,6 +78,11 @@
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     if (textField.tag == 3) {
         dateDone.alpha = 1;
+    } else if (textField.tag == 4) {
+        [UIView animateWithDuration:1 animations:^ {
+            [scroll setContentOffset:CGPointMake(0, [self.view viewWithTag:4].frame.origin.y-100) animated:NO];
+        }];
+        
     }
     return YES;
 }
@@ -103,6 +109,14 @@
                      }
          ];
     }
+    if (textField.tag == 4) {
+        if (textField.text.length > 0) {
+            [items addObject:textField.text];
+            [itemTable reloadData];
+            itemTable.frame = CGRectMake(itemTable.frame.origin.x, itemTable.frame.origin.y, itemTable.frame.size.width, 36*items.count);
+            [textField setText:@""];
+        }
+    }
     return YES;
 }
 
@@ -127,7 +141,7 @@
 
 - (IBAction)durationStep:(UIStepper*)sender {
     if (sender.value > oldValue) {
-        if (duration.frame.size.width < 240) {
+        if (duration.frame.size.width <= 220) {
             for (int a = 0; a < 20; a++) {
                 duration.frame = CGRectMake(duration.frame.origin.x, duration.frame.origin.y, duration.frame.size.width+1, duration.frame.size.height);
             }
@@ -215,7 +229,7 @@
             duration.frame = CGRectMake(duration.frame.origin.x, duration.frame.origin.y, duration.frame.size.width+5, duration.frame.size.height);;
         }
     }
-    durationStep.value = 100;
+    durationStep.value = 50;
     lastX = (int)scrollView.contentOffset.x;
     duration.text = [self timeConvert];
 }
@@ -270,5 +284,35 @@
         durationNumber = 240;
         return @"All Day";
     }
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 36;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (items.count == 0) {
+        return 1;
+    } else {
+        return items.count;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"itemsCell";
+    
+    itemsCell *cell = (itemsCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"itemsCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    if (items.count > 0) {
+            cell.itemText.text = items[indexPath.row];
+    }
+
+    
+    return cell;
 }
 @end

@@ -11,9 +11,10 @@
 #import <MapKit/MapKit.h>
 #import "jobObject.h"
 #import <CloudKit/CloudKit.h>
+#import "itemsCell.h"
 
-@interface createEventViewController : UIViewController <UITextViewDelegate,UITextFieldDelegate,UIScrollViewDelegate>{
-    
+@interface createEventViewController : UIViewController <UITextViewDelegate,UITextFieldDelegate,UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>{
+    NSMutableArray *items;
     __weak IBOutlet UILabel *blur;
     __weak IBOutlet UIScrollView *scroll;
     __weak IBOutlet MKMapView *map;
@@ -34,6 +35,7 @@
     double durationNumber,startHour,startMinutes;
     __weak IBOutlet UIProgressView *progress;
     __weak IBOutlet UILabel *titleLabel;
+    __weak IBOutlet UITableView *itemTable;
 }
 - (IBAction)durationStep:(UIStepper*)sender;
 - (IBAction)cancel:(id)sender;
