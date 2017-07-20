@@ -48,7 +48,7 @@
         [todayView addSubview:label];
     }
     todayView.contentSize = CGSizeMake([References screenWidth], 100*words.count);
-    [todayView setContentOffset:CGPointMake(0, 700)];
+    [todayView setContentOffset:CGPointMake(0,525)];
 }
 
 -(void)createEvent:(jobObject*)job {
@@ -97,6 +97,8 @@
 }
 
 -(void)getEvents {
+    [References fadeIn:progressBar];
+    [References fadeLabelText:titleBar newText:@"Pulling Schedule..."];
     [progressBar setProgress:0.5 animated:YES];
     for (UIView *v in todayView.subviews) {
         if (![v isKindOfClass:[UIImageView class]]) {
@@ -112,6 +114,16 @@
     CKQuery *query = [[CKQuery alloc] initWithRecordType:@"Events" predicate:predicate];
     [publicDatabase performQuery:query inZoneWithID:nil completionHandler:^(NSArray *results, NSError *error) {
         if (!error) {
+            if (results.count == 0) {
+                [progressBar setProgress:1 animated:YES];
+                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC);
+                
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    [References fadeOut:progressBar];
+                    [References fadeLabelText:titleBar newText:@"Today"];
+                    
+                });
+            } else {
             events = [[NSMutableArray alloc] init];
             for (int a = 0; a < results.count; a++) {
                 CKRecord *record = results[a];
@@ -124,10 +136,19 @@
                     for (int a = 0; a < events.count; a++) {
                         [self createEvent:events[a]];
                     }
-                    [progressBar setProgress:1 animated:YES];
+                        [progressBar setProgress:1 animated:YES];
+                    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC);
+                    
+                    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                        [References fadeOut:progressBar];
+                        [References fadeLabelText:titleBar newText:@"Today"];
+                        [progressBar setProgress:0];
+                    });
+                    
+                    
+                    
                      });
-//                jobs = [[NSMutableArray alloc] init];
-//                jobObject *Cloudera = [[jobObject alloc] initWithType:@"PICKUP" andPerson:@"Rik" andAddress:@"Cloudera" andCompany:@"Cloudera" andDate:@"4/20" andHour:@9 andMinutes:@30 andDuration:@30 andInfo:@""];
+            }
             }
         } else {
             NSLog(@"%@",error.localizedDescription);

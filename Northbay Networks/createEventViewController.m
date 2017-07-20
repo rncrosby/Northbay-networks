@@ -32,9 +32,31 @@
     [datePicker setDatePickerMode:UIDatePickerModeDateAndTime];
     [datePicker setDate:[NSDate date]];
     [datePicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
+    UIToolbar* keyboardDoneButtonView = [[UIToolbar alloc] init];
+    keyboardDoneButtonView.barStyle = UIBarStyleDefault;
+    keyboardDoneButtonView.translucent = YES;
+    keyboardDoneButtonView.tintColor = nil;
+    [keyboardDoneButtonView sizeToFit];
+    UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                                    style:UIBarButtonItemStyleDone target:self
+                                                                   action:@selector(pickerDoneClicked:)];
+    [doneButton setTintColor:[[[UIApplication sharedApplication] delegate] window].tintColor];
+    UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    [keyboardDoneButtonView setItems:[NSArray arrayWithObjects:flex,doneButton,flex, nil]];
+    
+    date.inputAccessoryView = keyboardDoneButtonView;
     [date setInputView:datePicker];
     
     // Do any additional setup after loading the view.
+}
+
+- (IBAction)pickerDoneClicked:(id)sender {
+    [date resignFirstResponder];
+}
+
+-(void)changeDateFromLabel:(id)sender
+{
+    [date resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -127,6 +149,9 @@
 }
 
 - (IBAction)create:(id)sender {
+    [References fadeIn:progress];
+    [References fadeLabelText:titleLabel newText:@"Creating Event..."];
+    [progress setProgress:0.5 animated:YES];
     CKRecordID *recordID = [[CKRecordID alloc] initWithRecordName:[NSString stringWithFormat:@"%i",arc4random() %500]];
     CKRecord *postRecord = [[CKRecord alloc] initWithRecordType:@"Events" recordID:recordID];
     postRecord[@"type"] = @"DELIVERY";
@@ -143,7 +168,15 @@
         if(error) {
             NSLog(@"%@",error.localizedDescription);
         } else {
-            NSLog(@"success");
+            [References fadeLabelText:titleLabel newText:@"Event Created"];
+            [progress setProgress:1 animated:YES];
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC);
+            
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [References fadeOut:progress];
+                [self dismissViewControllerAnimated:YES completion:nil];
+                
+            });
         }
     }];
 }
@@ -182,6 +215,7 @@
             duration.frame = CGRectMake(duration.frame.origin.x, duration.frame.origin.y, duration.frame.size.width+5, duration.frame.size.height);;
         }
     }
+    durationStep.value = 100;
     lastX = (int)scrollView.contentOffset.x;
     duration.text = [self timeConvert];
 }

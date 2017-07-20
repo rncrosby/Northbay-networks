@@ -32,6 +32,8 @@
     __weak IBOutlet UIButton *cancelButton;
     NSString *dateText;
     double durationNumber,startHour,startMinutes;
+    __weak IBOutlet UIProgressView *progress;
+    __weak IBOutlet UILabel *titleLabel;
 }
 - (IBAction)durationStep:(UIStepper*)sender;
 - (IBAction)cancel:(id)sender;
