@@ -1,0 +1,382 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD29009E1F1FFE4E001DB236 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD29009D1F1FFE4E001DB236 /* CloudKit.framework */; };
+		AD2900A21F200C55001DB236 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = AD2900A11F200BE6001DB236 /* refresh.png */; };
+		AD2900A41F200F0D001DB236 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = AD2900A31F200F05001DB236 /* forward.png */; };
+		AD3275A71F0FFB7C00B20DE7 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = AD3275A51F0FFB7200B20DE7 /* menu.png */; };
+		AD3275A81F0FFB7F00B20DE7 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = AD3275A61F0FFB7200B20DE7 /* plus.png */; };
+		ADCE94FD1F1DA084005296B1 /* createEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE94FC1F1DA084005296B1 /* createEventViewController.m */; };
+		ADF766561F0DA00D0060F6FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF766551F0DA00D0060F6FF /* AppDelegate.m */; };
+		ADF766591F0DA00D0060F6FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF766581F0DA00D0060F6FF /* ViewController.m */; };
+		ADF7665C1F0DA00D0060F6FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADF7665A1F0DA00D0060F6FF /* Main.storyboard */; };
+		ADF7665E1F0DA00D0060F6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADF7665D1F0DA00D0060F6FF /* Assets.xcassets */; };
+		ADF766611F0DA00D0060F6FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADF7665F1F0DA00D0060F6FF /* LaunchScreen.storyboard */; };
+		ADF766641F0DA00D0060F6FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF766631F0DA00D0060F6FF /* main.m */; };
+		ADF7666E1F0DA0AA0060F6FF /* jobObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF7666C1F0DA09D0060F6FF /* jobObject.m */; };
+		ADF766791F0DA60C0060F6FF /* References.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF766771F0DA6060060F6FF /* References.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AD29009C1F1FFDA1001DB236 /* Northbay Networks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Northbay Networks.entitlements"; sourceTree = "<group>"; };
+		AD29009D1F1FFE4E001DB236 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		AD2900A11F200BE6001DB236 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		AD2900A31F200F05001DB236 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
+		AD3275A51F0FFB7200B20DE7 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		AD3275A61F0FFB7200B20DE7 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		ADCE94FB1F1DA084005296B1 /* createEventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = createEventViewController.h; sourceTree = "<group>"; };
+		ADCE94FC1F1DA084005296B1 /* createEventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = createEventViewController.m; sourceTree = "<group>"; };
+		ADCE94FF1F1DB653005296B1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		ADF766511F0DA00D0060F6FF /* Northbay Networks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Northbay Networks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADF766541F0DA00D0060F6FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ADF766551F0DA00D0060F6FF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ADF766571F0DA00D0060F6FF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ADF766581F0DA00D0060F6FF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ADF7665B1F0DA00D0060F6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ADF7665D1F0DA00D0060F6FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ADF766601F0DA00D0060F6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ADF766621F0DA00D0060F6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADF766631F0DA00D0060F6FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ADF7666C1F0DA09D0060F6FF /* jobObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jobObject.m; sourceTree = "<group>"; };
+		ADF7666D1F0DA09D0060F6FF /* jobObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jobObject.h; sourceTree = "<group>"; };
+		ADF766771F0DA6060060F6FF /* References.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = References.m; sourceTree = "<group>"; };
+		ADF766781F0DA6060060F6FF /* References.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = References.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ADF7664E1F0DA00D0060F6FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD29009E1F1FFE4E001DB236 /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ADCE94FE1F1DB652005296B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD29009D1F1FFE4E001DB236 /* CloudKit.framework */,
+				ADCE94FF1F1DB653005296B1 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ADF766481F0DA00D0060F6FF = {
+			isa = PBXGroup;
+			children = (
+				ADF766531F0DA00D0060F6FF /* Northbay Networks */,
+				ADF766521F0DA00D0060F6FF /* Products */,
+				ADCE94FE1F1DB652005296B1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ADF766521F0DA00D0060F6FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ADF766511F0DA00D0060F6FF /* Northbay Networks.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ADF766531F0DA00D0060F6FF /* Northbay Networks */ = {
+			isa = PBXGroup;
+			children = (
+				AD29009C1F1FFDA1001DB236 /* Northbay Networks.entitlements */,
+				ADF766781F0DA6060060F6FF /* References.h */,
+				ADF766771F0DA6060060F6FF /* References.m */,
+				ADF7666D1F0DA09D0060F6FF /* jobObject.h */,
+				ADF7666C1F0DA09D0060F6FF /* jobObject.m */,
+				ADF766541F0DA00D0060F6FF /* AppDelegate.h */,
+				ADF766551F0DA00D0060F6FF /* AppDelegate.m */,
+				ADF766571F0DA00D0060F6FF /* ViewController.h */,
+				ADF766581F0DA00D0060F6FF /* ViewController.m */,
+				ADCE94FB1F1DA084005296B1 /* createEventViewController.h */,
+				ADCE94FC1F1DA084005296B1 /* createEventViewController.m */,
+				ADF7665A1F0DA00D0060F6FF /* Main.storyboard */,
+				ADF7665D1F0DA00D0060F6FF /* Assets.xcassets */,
+				ADF7665F1F0DA00D0060F6FF /* LaunchScreen.storyboard */,
+				ADF766621F0DA00D0060F6FF /* Info.plist */,
+				ADF766631F0DA00D0060F6FF /* main.m */,
+				AD3275A51F0FFB7200B20DE7 /* menu.png */,
+				AD3275A61F0FFB7200B20DE7 /* plus.png */,
+				AD2900A11F200BE6001DB236 /* refresh.png */,
+				AD2900A31F200F05001DB236 /* forward.png */,
+			);
+			path = "Northbay Networks";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ADF766501F0DA00D0060F6FF /* Northbay Networks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADF766671F0DA00D0060F6FF /* Build configuration list for PBXNativeTarget "Northbay Networks" */;
+			buildPhases = (
+				ADF7664D1F0DA00D0060F6FF /* Sources */,
+				ADF7664E1F0DA00D0060F6FF /* Frameworks */,
+				ADF7664F1F0DA00D0060F6FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Northbay Networks";
+			productName = "Northbay Networks";
+			productReference = ADF766511F0DA00D0060F6FF /* Northbay Networks.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ADF766491F0DA00D0060F6FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "fully toasted";
+				TargetAttributes = {
+					ADF766501F0DA00D0060F6FF = {
+						CreatedOnToolsVersion = 9.0;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = ADF7664C1F0DA00D0060F6FF /* Build configuration list for PBXProject "Northbay Networks" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ADF766481F0DA00D0060F6FF;
+			productRefGroup = ADF766521F0DA00D0060F6FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ADF766501F0DA00D0060F6FF /* Northbay Networks */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ADF7664F1F0DA00D0060F6FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD2900A41F200F0D001DB236 /* forward.png in Resources */,
+				AD2900A21F200C55001DB236 /* refresh.png in Resources */,
+				AD3275A81F0FFB7F00B20DE7 /* plus.png in Resources */,
+				AD3275A71F0FFB7C00B20DE7 /* menu.png in Resources */,
+				ADF766611F0DA00D0060F6FF /* LaunchScreen.storyboard in Resources */,
+				ADF7665E1F0DA00D0060F6FF /* Assets.xcassets in Resources */,
+				ADF7665C1F0DA00D0060F6FF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ADF7664D1F0DA00D0060F6FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADF766791F0DA60C0060F6FF /* References.m in Sources */,
+				ADF7666E1F0DA0AA0060F6FF /* jobObject.m in Sources */,
+				ADF766591F0DA00D0060F6FF /* ViewController.m in Sources */,
+				ADCE94FD1F1DA084005296B1 /* createEventViewController.m in Sources */,
+				ADF766641F0DA00D0060F6FF /* main.m in Sources */,
+				ADF766561F0DA00D0060F6FF /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ADF7665A1F0DA00D0060F6FF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADF7665B1F0DA00D0060F6FF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ADF7665F1F0DA00D0060F6FF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADF766601F0DA00D0060F6FF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ADF766651F0DA00D0060F6FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ADF766661F0DA00D0060F6FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ADF766681F0DA00D0060F6FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Northbay Networks/Northbay Networks.entitlements";
+				DEVELOPMENT_TEAM = UD5W2M958Y;
+				INFOPLIST_FILE = "Northbay Networks/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fullytoasted.Northbay-Networks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ADF766691F0DA00D0060F6FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Northbay Networks/Northbay Networks.entitlements";
+				DEVELOPMENT_TEAM = UD5W2M958Y;
+				INFOPLIST_FILE = "Northbay Networks/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fullytoasted.Northbay-Networks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ADF7664C1F0DA00D0060F6FF /* Build configuration list for PBXProject "Northbay Networks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADF766651F0DA00D0060F6FF /* Debug */,
+				ADF766661F0DA00D0060F6FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADF766671F0DA00D0060F6FF /* Build configuration list for PBXNativeTarget "Northbay Networks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADF766681F0DA00D0060F6FF /* Debug */,
+				ADF766691F0DA00D0060F6FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ADF766491F0DA00D0060F6FF /* Project object */;
+}
