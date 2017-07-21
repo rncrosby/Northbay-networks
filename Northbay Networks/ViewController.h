@@ -13,7 +13,7 @@
 #import "eventViewController.h"
 
 @interface ViewController : UIViewController {
-    NSMutableArray *events;
+    NSMutableArray *events,*eventRecords;
     __weak IBOutlet UIScrollView *todayView;
     __weak IBOutlet UILabel *blur;
     __weak IBOutlet UILabel *bottomBlur;

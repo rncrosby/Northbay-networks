@@ -133,7 +133,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </mapView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kee-51-6Lu">
-                                        <rect key="frame" x="16" y="385" width="343" height="55"/>
+                                        <rect key="frame" x="16" y="609" width="343" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.1960784314" green="0.26274509800000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -144,6 +144,18 @@
                                             <action selector="confirm:" destination="lqw-Fc-hkE" eventType="touchUpInside" id="yCV-jw-Kfs"/>
                                         </connections>
                                     </button>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" id="k14-TV-3oq">
+                                        <rect key="frame" x="16" y="398" width="343" height="203"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PLEASE SIGN BELOW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ty5-Rw-enC">
+                                        <rect key="frame" x="18" y="380" width="341" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="64" maxY="0.0"/>
                             </scrollView>
@@ -175,7 +187,7 @@
                                 <state key="normal" title="Edit"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <size key="freeformSize" width="375" height="1334"/>
                     <connections>
@@ -184,6 +196,7 @@
                         <outlet property="map" destination="TrT-tS-ef5" id="QjW-D9-RWt"/>
                         <outlet property="monthDate" destination="LhJ-G0-eLg" id="NaY-eT-wcX"/>
                         <outlet property="scroll" destination="el9-aV-0u8" id="fu7-Cn-Oq2"/>
+                        <outlet property="signatureView" destination="k14-TV-3oq" id="2nE-6P-qwn"/>
                         <outlet property="time" destination="dXR-c5-mig" id="ea3-22-YUK"/>
                         <outlet property="titleText" destination="3U0-qQ-gSx" id="PnW-h4-v7A"/>
                         <outlet property="weekDay" destination="SfU-0u-O8Q" id="l8n-Fv-YGW"/>

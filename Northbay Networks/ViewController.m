@@ -66,7 +66,11 @@
     [button setTitle:@"" forState:UIControlStateNormal];
     [button setTag:index];
     [todayView addSubview:button];
-    card.backgroundColor = [References colorFromHexString:@"#324376"];
+    if (job.isComplete.boolValue == NO) {
+            card.backgroundColor = [References colorFromHexString:@"#324376"];
+    } else {
+            card.backgroundColor = [References colorFromHexString:@"#009688"];
+    }
     UILabel *shadowCard = [[UILabel alloc] initWithFrame:CGRectMake(8+35+5, y+5, [References screenWidth]-8-35-8-10, height-10)];
     [References cornerRadius:card radius:8.0f];
     shadowCard.backgroundColor = [UIColor whiteColor];
@@ -130,14 +134,20 @@
                     
                 });
             } else {
+                [eventRecords removeAllObjects];
+                [events removeAllObjects];
+            eventRecords = [[NSMutableArray alloc] init];
             events = [[NSMutableArray alloc] init];
             for (int a = 0; a < results.count; a++) {
                 CKRecord *record = results[a];
                 NSNumber *hour = [record valueForKey:@"hour"];
                 NSNumber *minutes = [record valueForKey:@"minutes"];
                 NSNumber *duration = [record valueForKey:@"duration"];
-                jobObject *job = [[jobObject alloc] initWithType:[record valueForKey:@"type"] andPerson:[record valueForKey:@"person"] andAddress:[record valueForKey:@"address"] andCompany:[record valueForKey:@"company"] andDate:[record valueForKey:@"seconds"] andHour:hour andMinutes:minutes andDuration:duration andInfo:[record valueForKey:@"info"] andDateIndex:[record valueForKey:@"dateIndex"] andPlainTime:[record valueForKey:@"plainTime"]];
+                NSNumber *isComplete = [record valueForKey:@"isComplete"];
+                jobObject *job = [[jobObject alloc] initWithType:[record valueForKey:@"type"] andPerson:[record valueForKey:@"person"] andAddress:[record valueForKey:@"address"] andCompany:[record valueForKey:@"company"] andDate:[record valueForKey:@"seconds"] andHour:hour andMinutes:minutes andDuration:duration andInfo:[record valueForKey:@"info"] andDateIndex:[record valueForKey:@"dateIndex"] andPlainTime:[record valueForKey:@"plainTime"] andIsComplete:isComplete andSignature:[record valueForKey:@"signature"]];
+                [eventRecords addObject:results[a]];
                 [events addObject:job];
+            }
                 dispatch_async(dispatch_get_main_queue(), ^(void){
                     for (int a = 0; a < events.count; a++) {
                         [self createEvent:events[a] andIndex:a];
@@ -154,7 +164,7 @@
                     
                     
                      });
-            }
+                
             }
         } else {
             NSLog(@"%@",error.localizedDescription);
@@ -172,6 +182,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     eventViewController *viewController = (eventViewController *)[storyboard instantiateViewControllerWithIdentifier:@"eventViewController"];
     viewController.job = events[index];
+    viewController.record = eventRecords[index];
     [self presentViewController:viewController animated:YES completion:nil];
 }
 @end

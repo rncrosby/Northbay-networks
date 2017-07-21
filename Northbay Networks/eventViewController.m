@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [References createLine:self.view xPos:0 yPos:blur.frame.origin.y+blur.frame.size.height inFront:TRUE];
     [References cornerRadius:map radius:8.0f];
+    [References cornerRadius:signatureView radius:8.0f];
+    [References cornerRadius:confirm radius:8.0f];
     scroll.contentSize = CGSizeMake([References screenWidth], [self.view viewWithTag:4].frame.origin.y + 1000);
     scroll.frame = CGRectMake(0, 0, [References screenWidth], [References screenHeight]);
     [References blurView:blur];
@@ -27,6 +29,24 @@
     time.text = plainTime[2];
     [super viewDidLoad];
     [self pullAddress];
+    if (_job.isComplete.intValue == 0) {
+        EAGLContext *context = [[EAGLContext alloc]initWithAPI:kEAGLRenderingAPIOpenGLES2];
+        sign = [[PPSSignatureView alloc] initWithFrame:CGRectMake(0, 0, signatureView.frame.size.width, signatureView.frame.size.width) context:context];
+        GLKViewController *glkView = [[GLKViewController alloc] init];
+        glkView.view = sign;
+        [signatureView addSubview:glkView.view];
+    } else {
+        UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, signatureView.frame.size.width, signatureView.frame.size.height)];
+        signatureView.frame = CGRectMake(signatureView.frame.origin.x, signatureView.frame.origin.y, signatureView.frame.size.width, signatureView.frame.size.height/2);
+        confirm.frame = CGRectMake(confirm.frame.origin.x, confirm.frame.origin.y-signatureView.frame.size.height, confirm.frame.size.width, confirm.frame.size.height);
+        [confirm setBackgroundColor:[References colorFromHexString:@"#009688"]];
+        [confirm setTitle:@"View Invoice" forState:UIControlStateNormal];
+        [image setContentMode:UIViewContentModeRedraw];
+        [image setImage:[self decodeBase64ToImage:_job.signature]];
+        [signatureView addSubview:image];
+        [signatureView bringSubviewToFront:image];
+    }
+    
     // Do any additional setup after loading the view.
 }
 
@@ -56,7 +76,35 @@
 }
 
 - (IBAction)confirm:(id _Nonnull)sender {
+    if (_job.isComplete.intValue == 1) {
+        [References toastMessage:@"Coming Soon" andView:self];
+    } else {
+    NSLog(@"%@",[self base64String:sign.signatureImage]);
+    _record[@"signature"] = [self base64String:sign.signatureImage];
+     _record[@"isComplete"] = [NSNumber numberWithBool:YES];
+    CKModifyRecordsOperation *modifyRecords= [[CKModifyRecordsOperation alloc]
+                                              initWithRecordsToSave:[[NSArray alloc] initWithObjects:_record, nil] recordIDsToDelete:nil];
+    modifyRecords.savePolicy=CKRecordSaveAllKeys;
+    modifyRecords.qualityOfService=NSQualityOfServiceUserInitiated;
+    modifyRecords.modifyRecordsCompletionBlock=
+    ^(NSArray * savedRecords, NSArray * deletedRecordIDs, NSError * operationError){
+        //   the completion block code here
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            [References toastMessage:@"Delivery Complete!" andView:self];
+            });
+    };
+    CKContainer *defaultContainer = [CKContainer defaultContainer];
+    [[defaultContainer publicCloudDatabase] addOperation:modifyRecords];
+    }
+}
 
+ - (NSString *)base64String :(UIImage*)image{
+    return [UIImagePNGRepresentation(image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+}
+
+- (UIImage *)decodeBase64ToImage:(NSString *)strEncodeData {
+    NSData *data = [[NSData alloc]initWithBase64EncodedString:strEncodeData options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    return [UIImage imageWithData:data];
 }
 
 - (IBAction)backButton:(id _Nonnull )sender {

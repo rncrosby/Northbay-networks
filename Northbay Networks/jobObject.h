@@ -22,8 +22,10 @@
 @property (nonatomic, strong) NSString *code;
 @property (nonatomic, strong) NSString *dateIndex;
 @property (nonatomic, strong) NSString *plainTime;
+@property (nonatomic, strong) NSNumber *isComplete;
+@property (nonatomic, strong) NSString *signature;
 
--(instancetype)initWithType:(NSString*)type andPerson:(NSString*)person andAddress:(NSString*)address andCompany:(NSString*)company andDate:(NSString*)date andHour:(NSNumber*)hour andMinutes:(NSNumber*)minutes andDuration:(NSNumber*)duration andInfo:(NSString*)info andDateIndex:(NSString*)dateIndex andPlainTime:(NSString*)plainTime;
+-(instancetype)initWithType:(NSString*)type andPerson:(NSString*)person andAddress:(NSString*)address andCompany:(NSString*)company andDate:(NSString*)date andHour:(NSNumber*)hour andMinutes:(NSNumber*)minutes andDuration:(NSNumber*)duration andInfo:(NSString*)info andDateIndex:(NSString*)dateIndex andPlainTime:(NSString*)plainTime andIsComplete:(NSNumber*)isComplete andSignature:(NSString*)signature;
 -(int)getRows;
 
 @end

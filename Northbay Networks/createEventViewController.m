@@ -187,6 +187,7 @@
     postRecord[@"minutes"] = [NSNumber numberWithDouble:startMinutes];
     postRecord[@"duration"] = [NSNumber numberWithDouble:durationNumber];
     postRecord[@"info"] = @"Info";
+    postRecord[@"isComplete"] = [NSNumber numberWithBool:FALSE];
     CKDatabase *publicDatabase = [[CKContainer defaultContainer] publicCloudDatabase];
     [publicDatabase saveRecord:postRecord completionHandler:^(CKRecord *record, NSError *error) {
         if(error) {

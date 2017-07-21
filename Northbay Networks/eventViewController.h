@@ -10,6 +10,8 @@
 #import "References.h"
 #import "ViewController.h"
 #import <MapKit/MapKit.h>
+#import "PPSSignatureView.h"
+#import <CloudKit/CloudKit.h>
 
 @interface eventViewController : UIViewController
 {
@@ -21,9 +23,12 @@
     IBOutlet MKMapView *map;
     IBOutlet UIScrollView *scroll;
     IBOutlet UIButton *confirm;
+    IBOutlet UIView *signatureView;
+    PPSSignatureView *sign;
 }
 
 - (IBAction)confirm:(id _Nonnull )sender;
 - (IBAction)backButton:(id _Nonnull )sender;
 @property (nonatomic, nonnull) jobObject *job;
+@property (nonatomic, nonnull) CKRecord *record;
 @end
