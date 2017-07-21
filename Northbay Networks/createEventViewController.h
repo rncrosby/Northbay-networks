@@ -31,7 +31,8 @@
     BOOL isDelivery;
     __weak IBOutlet UIButton *createButton;
     __weak IBOutlet UIButton *cancelButton;
-    NSString *dateText;
+    NSString *dateText,*plainText;
+    NSString *monthDateIndex;
     double durationNumber,startHour,startMinutes;
     __weak IBOutlet UIProgressView *progress;
     __weak IBOutlet UILabel *titleLabel;

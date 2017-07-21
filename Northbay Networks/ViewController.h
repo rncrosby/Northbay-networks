@@ -10,6 +10,7 @@
 #import "jobObject.h"
 #import "References.h"
 #import <CloudKit/CloudKit.h>
+#import "eventViewController.h"
 
 @interface ViewController : UIViewController {
     NSMutableArray *events;

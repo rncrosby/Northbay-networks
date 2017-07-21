@@ -47,11 +47,14 @@
     
     date.inputAccessoryView = keyboardDoneButtonView;
     [date setInputView:datePicker];
-    
     // Do any additional setup after loading the view.
 }
 
 - (IBAction)pickerDoneClicked:(id)sender {
+    UIDatePicker *picker = (UIDatePicker*)date.inputView;
+    eventDate = picker.date;
+    dateDone.alpha = 0;
+    [date resignFirstResponder];
     [date resignFirstResponder];
 }
 
@@ -128,15 +131,21 @@
     NSString *dateString = [formatter stringFromDate:picker.date];
     [formatter setDateFormat:@"h:mm a"];
     NSString *timeString = [formatter stringFromDate:picker.date];
-    [formatter setDateFormat:@"MM/dd"];
+    [formatter setDateFormat:@"MMdd"];
+    monthDateIndex = [NSString stringWithFormat:@"%li",(long)[formatter stringFromDate:picker.date].integerValue];
     dateText = [formatter stringFromDate:picker.date];
-    [formatter setDateFormat:@"HH"];
-    NSString *hourStart = [formatter stringFromDate:picker.date];
-    [formatter setDateFormat:@"mm"];
-    NSString *minuteStart = [formatter stringFromDate:picker.date];
-    startHour = hourStart.doubleValue;
-    startMinutes = minuteStart.doubleValue;
     date.text = [NSString stringWithFormat:@"%@ at %@",dateString,timeString];
+    [formatter setDateFormat:@"HH"];
+    startHour = [formatter stringFromDate:picker.date].doubleValue;
+    [formatter setDateFormat:@"mm"];
+    startMinutes = [formatter stringFromDate:picker.date].doubleValue;
+    [formatter setDateFormat:@"EEEE"];
+    NSString *day = [formatter stringFromDate:picker.date];
+    [formatter setDateFormat:@"MMMM d"];
+    NSString *month = [formatter stringFromDate:picker.date];
+    [formatter setDateFormat:@"h:mm a"];
+    NSString *time = [formatter stringFromDate:picker.date];
+    plainText = [NSString stringWithFormat:@"%@.%@.%@",day,month,time];
 }
 
 - (IBAction)durationStep:(UIStepper*)sender {
@@ -172,7 +181,8 @@
     postRecord[@"person"] = @"Rob";
     postRecord[@"address"] = address.text;
     postRecord[@"company"] = company.text;
-    postRecord[@"date"] = dateText;
+    postRecord[@"dateIndex"] = monthDateIndex;
+    postRecord[@"plainTime"] = plainText;
     postRecord[@"hour"] = [NSNumber numberWithDouble:startHour];
     postRecord[@"minutes"] = [NSNumber numberWithDouble:startMinutes];
     postRecord[@"duration"] = [NSNumber numberWithDouble:durationNumber];
@@ -196,10 +206,7 @@
 }
 
 - (IBAction)dateDone:(id)sender {
-    UIDatePicker *picker = (UIDatePicker*)date.inputView;
-    eventDate = picker.date;
-    dateDone.alpha = 0;
-    [date resignFirstResponder];
+    
 }
 
 - (IBAction)changeType:(UISegmentedControl *)sender {

@@ -12,6 +12,9 @@
 		AD2900A41F200F0D001DB236 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = AD2900A31F200F05001DB236 /* forward.png */; };
 		AD3275A71F0FFB7C00B20DE7 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = AD3275A51F0FFB7200B20DE7 /* menu.png */; };
 		AD3275A81F0FFB7F00B20DE7 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = AD3275A61F0FFB7200B20DE7 /* plus.png */; };
+		ADC124FA1F21177D0087B703 /* eventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC124F91F21177D0087B703 /* eventViewController.m */; };
+		ADCD2DA71F228AC700DB7134 /* eventViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCD2DA51F228AC700DB7134 /* eventViewCell.m */; };
+		ADCD2DA81F228AC700DB7134 /* eventViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADCD2DA61F228AC700DB7134 /* eventViewCell.xib */; };
 		ADCE94FD1F1DA084005296B1 /* createEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCE94FC1F1DA084005296B1 /* createEventViewController.m */; };
 		ADF766561F0DA00D0060F6FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF766551F0DA00D0060F6FF /* AppDelegate.m */; };
 		ADF766591F0DA00D0060F6FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF766581F0DA00D0060F6FF /* ViewController.m */; };
@@ -32,6 +35,11 @@
 		AD2900A31F200F05001DB236 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
 		AD3275A51F0FFB7200B20DE7 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		AD3275A61F0FFB7200B20DE7 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		ADC124F81F21177D0087B703 /* eventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eventViewController.h; sourceTree = "<group>"; };
+		ADC124F91F21177D0087B703 /* eventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eventViewController.m; sourceTree = "<group>"; };
+		ADCD2DA41F228AC700DB7134 /* eventViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eventViewCell.h; sourceTree = "<group>"; };
+		ADCD2DA51F228AC700DB7134 /* eventViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eventViewCell.m; sourceTree = "<group>"; };
+		ADCD2DA61F228AC700DB7134 /* eventViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = eventViewCell.xib; sourceTree = "<group>"; };
 		ADCE94FB1F1DA084005296B1 /* createEventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = createEventViewController.h; sourceTree = "<group>"; };
 		ADCE94FC1F1DA084005296B1 /* createEventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = createEventViewController.m; sourceTree = "<group>"; };
 		ADCE94FF1F1DB653005296B1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -118,6 +126,11 @@
 				D445C17F1F206E3A00FA3302 /* itemsCell.h */,
 				D445C1801F206E3A00FA3302 /* itemsCell.m */,
 				D445C1811F206E3A00FA3302 /* itemsCell.xib */,
+				ADC124F81F21177D0087B703 /* eventViewController.h */,
+				ADC124F91F21177D0087B703 /* eventViewController.m */,
+				ADCD2DA41F228AC700DB7134 /* eventViewCell.h */,
+				ADCD2DA51F228AC700DB7134 /* eventViewCell.m */,
+				ADCD2DA61F228AC700DB7134 /* eventViewCell.xib */,
 			);
 			path = "Northbay Networks";
 			sourceTree = "<group>";
@@ -187,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADCD2DA81F228AC700DB7134 /* eventViewCell.xib in Resources */,
 				D445C1831F206E3A00FA3302 /* itemsCell.xib in Resources */,
 				AD2900A41F200F0D001DB236 /* forward.png in Resources */,
 				AD2900A21F200C55001DB236 /* refresh.png in Resources */,
@@ -206,8 +220,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADF766791F0DA60C0060F6FF /* References.m in Sources */,
+				ADC124FA1F21177D0087B703 /* eventViewController.m in Sources */,
 				ADF7666E1F0DA0AA0060F6FF /* jobObject.m in Sources */,
 				ADF766591F0DA00D0060F6FF /* ViewController.m in Sources */,
+				ADCD2DA71F228AC700DB7134 /* eventViewCell.m in Sources */,
 				ADCE94FD1F1DA084005296B1 /* createEventViewController.m in Sources */,
 				ADF766641F0DA00D0060F6FF /* main.m in Sources */,
 				D445C1821F206E3A00FA3302 /* itemsCell.m in Sources */,

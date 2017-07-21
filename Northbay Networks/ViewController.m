@@ -51,7 +51,7 @@
     [todayView setContentOffset:CGPointMake(0,525)];
 }
 
--(void)createEvent:(jobObject*)job {
+-(void)createEvent:(jobObject*)job andIndex:(int)index{
     int minutes = 0;
     if (job.minutes == 0) {
         minutes = 0;
@@ -61,6 +61,11 @@
     int y = ((100*job.hour.intValue-1)+5) + (100*minutes) + 5-99;
     float height = (job.duration.doubleValue*1.6666666)-10;
     UILabel *card = [[UILabel alloc] initWithFrame:CGRectMake(8+35, y, [References screenWidth]-8-35-8, height)];
+    UIButton *button = [[UIButton alloc] initWithFrame:card.frame];
+    [button addTarget:self action:@selector(openEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@"" forState:UIControlStateNormal];
+    [button setTag:index];
+    [todayView addSubview:button];
     card.backgroundColor = [References colorFromHexString:@"#324376"];
     UILabel *shadowCard = [[UILabel alloc] initWithFrame:CGRectMake(8+35+5, y+5, [References screenWidth]-8-35-8-10, height-10)];
     [References cornerRadius:card radius:8.0f];
@@ -70,6 +75,7 @@
     [todayView sendSubviewToBack:shadowCard];
     [todayView addSubview:card];
     [todayView bringSubviewToFront:card];
+    [todayView bringSubviewToFront:button];
     if (height > 25) {
         UILabel *person = [[UILabel alloc] initWithFrame:CGRectMake(card.frame.origin.x+4, card.frame.origin.y+(card.frame.size.height/2)-15, card.frame.size.width-8, 20)];
         person.textColor = [UIColor whiteColor];
@@ -130,11 +136,11 @@
                 NSNumber *hour = [record valueForKey:@"hour"];
                 NSNumber *minutes = [record valueForKey:@"minutes"];
                 NSNumber *duration = [record valueForKey:@"duration"];
-                jobObject *job = [[jobObject alloc] initWithType:[record valueForKey:@"type"] andPerson:[record valueForKey:@"person"] andAddress:[record valueForKey:@"address"] andCompany:[record valueForKey:@"company"] andDate:[record valueForKey:@"date"] andHour:hour andMinutes:minutes andDuration:duration andInfo:[record valueForKey:@"info"]];
+                jobObject *job = [[jobObject alloc] initWithType:[record valueForKey:@"type"] andPerson:[record valueForKey:@"person"] andAddress:[record valueForKey:@"address"] andCompany:[record valueForKey:@"company"] andDate:[record valueForKey:@"seconds"] andHour:hour andMinutes:minutes andDuration:duration andInfo:[record valueForKey:@"info"] andDateIndex:[record valueForKey:@"dateIndex"] andPlainTime:[record valueForKey:@"plainTime"]];
                 [events addObject:job];
                 dispatch_async(dispatch_get_main_queue(), ^(void){
                     for (int a = 0; a < events.count; a++) {
-                        [self createEvent:events[a]];
+                        [self createEvent:events[a] andIndex:a];
                     }
                         [progressBar setProgress:1 animated:YES];
                     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC);
@@ -158,5 +164,14 @@
 
 - (IBAction)refresh:(id)sender {
     [self getEvents];
+}
+
+-(void)openEvent:(UIButton *)sender
+{
+    int index = (int)sender.tag;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    eventViewController *viewController = (eventViewController *)[storyboard instantiateViewControllerWithIdentifier:@"eventViewController"];
+    viewController.job = events[index];
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 @end

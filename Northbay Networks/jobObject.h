@@ -20,8 +20,10 @@
 @property (nonatomic,strong) NSNumber *minutes;
 @property (nonatomic,strong) NSNumber *duration;
 @property (nonatomic, strong) NSString *code;
+@property (nonatomic, strong) NSString *dateIndex;
+@property (nonatomic, strong) NSString *plainTime;
 
--(instancetype)initWithType:(NSString*)type andPerson:(NSString*)person andAddress:(NSString*)address andCompany:(NSString*)company andDate:(NSString*)date andHour:(NSNumber*)hour andMinutes:(NSNumber*)minutes andDuration:(NSNumber*)duration andInfo:(NSString*)info;
+-(instancetype)initWithType:(NSString*)type andPerson:(NSString*)person andAddress:(NSString*)address andCompany:(NSString*)company andDate:(NSString*)date andHour:(NSNumber*)hour andMinutes:(NSNumber*)minutes andDuration:(NSNumber*)duration andInfo:(NSString*)info andDateIndex:(NSString*)dateIndex andPlainTime:(NSString*)plainTime;
 -(int)getRows;
 
 @end
