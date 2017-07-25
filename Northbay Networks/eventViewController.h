@@ -27,7 +27,9 @@
     IBOutlet UIView *signatureView;
     PPSSignatureView *sign;
     IBOutlet UITableView *table;
+    IBOutlet UITextView *instructions;
 }
+- (IBAction)deleteEvent:(id _Nonnull)sender;
 
 - (IBAction)confirm:(id _Nonnull )sender;
 - (IBAction)backButton:(id _Nonnull )sender;

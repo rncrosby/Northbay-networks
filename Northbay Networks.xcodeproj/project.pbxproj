@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD003A771F27EF0500F20C0E /* PPSSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD003A761F27EF0500F20C0E /* PPSSignatureView.m */; };
 		AD29009E1F1FFE4E001DB236 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD29009D1F1FFE4E001DB236 /* CloudKit.framework */; };
 		AD2900A21F200C55001DB236 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = AD2900A11F200BE6001DB236 /* refresh.png */; };
 		AD2900A41F200F0D001DB236 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = AD2900A31F200F05001DB236 /* forward.png */; };
 		AD3275A71F0FFB7C00B20DE7 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = AD3275A51F0FFB7200B20DE7 /* menu.png */; };
 		AD3275A81F0FFB7F00B20DE7 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = AD3275A61F0FFB7200B20DE7 /* plus.png */; };
-		AD5673501F2290F5005674F3 /* PPSSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD56734F1F2290F4005674F3 /* PPSSignatureView.m */; };
 		ADC124FA1F21177D0087B703 /* eventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC124F91F21177D0087B703 /* eventViewController.m */; };
 		ADCD2DA71F228AC700DB7134 /* eventViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADCD2DA51F228AC700DB7134 /* eventViewCell.m */; };
 		ADCD2DA81F228AC700DB7134 /* eventViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADCD2DA61F228AC700DB7134 /* eventViewCell.xib */; };
@@ -30,14 +30,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD003A751F27EF0500F20C0E /* PPSSignatureView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPSSignatureView.h; sourceTree = "<group>"; };
+		AD003A761F27EF0500F20C0E /* PPSSignatureView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPSSignatureView.m; sourceTree = "<group>"; };
 		AD29009C1F1FFDA1001DB236 /* Northbay Networks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Northbay Networks.entitlements"; sourceTree = "<group>"; };
 		AD29009D1F1FFE4E001DB236 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		AD2900A11F200BE6001DB236 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		AD2900A31F200F05001DB236 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
 		AD3275A51F0FFB7200B20DE7 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		AD3275A61F0FFB7200B20DE7 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
-		AD56734E1F2290F4005674F3 /* PPSSignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPSSignatureView.h; path = "../../../Downloads/PPSSignatureView-master-2/Source/PPSSignatureView.h"; sourceTree = "<group>"; };
-		AD56734F1F2290F4005674F3 /* PPSSignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPSSignatureView.m; path = "../../../Downloads/PPSSignatureView-master-2/Source/PPSSignatureView.m"; sourceTree = "<group>"; };
 		ADC124F81F21177D0087B703 /* eventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eventViewController.h; sourceTree = "<group>"; };
 		ADC124F91F21177D0087B703 /* eventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eventViewController.m; sourceTree = "<group>"; };
 		ADCD2DA41F228AC700DB7134 /* eventViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eventViewCell.h; sourceTree = "<group>"; };
@@ -134,8 +134,8 @@
 				ADCD2DA41F228AC700DB7134 /* eventViewCell.h */,
 				ADCD2DA51F228AC700DB7134 /* eventViewCell.m */,
 				ADCD2DA61F228AC700DB7134 /* eventViewCell.xib */,
-				AD56734E1F2290F4005674F3 /* PPSSignatureView.h */,
-				AD56734F1F2290F4005674F3 /* PPSSignatureView.m */,
+				AD003A751F27EF0500F20C0E /* PPSSignatureView.h */,
+				AD003A761F27EF0500F20C0E /* PPSSignatureView.m */,
 			);
 			path = "Northbay Networks";
 			sourceTree = "<group>";
@@ -225,7 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADF766791F0DA60C0060F6FF /* References.m in Sources */,
-				AD5673501F2290F5005674F3 /* PPSSignatureView.m in Sources */,
+				AD003A771F27EF0500F20C0E /* PPSSignatureView.m in Sources */,
 				ADC124FA1F21177D0087B703 /* eventViewController.m in Sources */,
 				ADF7666E1F0DA0AA0060F6FF /* jobObject.m in Sources */,
 				ADF766591F0DA00D0060F6FF /* ViewController.m in Sources */,

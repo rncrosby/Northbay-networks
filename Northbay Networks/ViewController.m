@@ -145,7 +145,7 @@
                 NSNumber *duration = [record valueForKey:@"duration"];
                 NSNumber *isComplete = [record valueForKey:@"isComplete"];
                 NSArray *items = [record objectForKey:@"invoice"];
-                jobObject *job = [[jobObject alloc] initWithType:[record valueForKey:@"type"] andPerson:[record valueForKey:@"person"] andAddress:[record valueForKey:@"address"] andCompany:[record valueForKey:@"company"] andDate:[record valueForKey:@"seconds"] andHour:hour andMinutes:minutes andDuration:duration andInfo:[record valueForKey:@"info"] andDateIndex:[record valueForKey:@"dateIndex"] andPlainTime:[record valueForKey:@"plainTime"] andIsComplete:isComplete andSignature:[record valueForKey:@"signature"] andItems:items];
+                jobObject *job = [[jobObject alloc] initWithType:[record valueForKey:@"type"] andPerson:[record valueForKey:@"person"] andAddress:[record valueForKey:@"address"] andCompany:[record valueForKey:@"company"] andDate:[record valueForKey:@"seconds"] andHour:hour andMinutes:minutes andDuration:duration andInfo:[record valueForKey:@"info"] andDateIndex:[record valueForKey:@"dateIndex"] andPlainTime:[record valueForKey:@"plainTime"] andIsComplete:isComplete andSignature:[record valueForKey:@"signature"] andItems:items andInstructions:[record valueForKey:@"instructions"]];
                 [eventRecords addObject:results[a]];
                 [events addObject:job];
             }

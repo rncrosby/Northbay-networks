@@ -37,6 +37,7 @@
     __weak IBOutlet UIProgressView *progress;
     __weak IBOutlet UILabel *titleLabel;
     __weak IBOutlet UITableView *itemTable;
+    IBOutlet UITextView *instructionsField;
 }
 - (IBAction)durationStep:(UIStepper*)sender;
 - (IBAction)cancel:(id)sender;

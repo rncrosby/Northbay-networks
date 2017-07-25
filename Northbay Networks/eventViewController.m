@@ -23,6 +23,7 @@
     scroll.contentSize = CGSizeMake([References screenWidth], [self.view viewWithTag:5].frame.origin.y + [self.view viewWithTag:5].frame.size.height + 8);
     scroll.frame = CGRectMake(0, 0, [References screenWidth], [References screenHeight]);
     [References blurView:blur];
+    instructions.text = _job.instructions;
     titleText.text = _job.company;
     NSArray *plainTime = [_job.plainTime componentsSeparatedByString:@"."];
     weekDay.text = plainTime[0];
@@ -76,12 +77,21 @@
      ];
 }
 
+
+- (IBAction)deleteEvent:(id _Nonnull)sender {
+    [[CKContainer defaultContainer].publicCloudDatabase deleteRecordWithID:_record.recordID completionHandler:^(CKRecordID *recordID, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            [self dismissViewControllerAnimated:YES completion:nil];
+        });
+    }];
+}
+
 - (IBAction)confirm:(id _Nonnull)sender {
     if (_job.isComplete.intValue == 1) {
         [References toastMessage:@"Coming Soon" andView:self];
     } else {
-    NSLog(@"%@",[self base64String:sign.signatureImage]);
-    _record[@"signature"] = [self base64String:sign.signatureImage];
+//    NSLog(@"%@",[self base64String:sign.signatureImage]);
+//    _record[@"signature"] = [self base64String:sign.signatureImage];
      _record[@"isComplete"] = [NSNumber numberWithBool:YES];
     CKModifyRecordsOperation *modifyRecords= [[CKModifyRecordsOperation alloc]
                                               initWithRecordsToSave:[[NSArray alloc] initWithObjects:_record, nil] recordIDsToDelete:nil];

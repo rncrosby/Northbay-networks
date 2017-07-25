@@ -1,3 +1,11 @@
+//
+//  PPSSignatureView.m
+//  Northbay Networks
+//
+//  Created by Robert Crosby on 7/25/17.
+//  Copyright © 2017 fully toasted. All rights reserved.
+//
+
 #import "PPSSignatureView.h"
 #import <OpenGLES/ES2/glext.h>
 
@@ -19,8 +27,8 @@ static float clearColor[4] = { 1, 1, 1, 0 };
 // Vertex structure containing 3D point and color
 struct PPSSignaturePoint
 {
-	GLKVector3		vertex;
-	GLKVector3		color;
+    GLKVector3        vertex;
+    GLKVector3        color;
 };
 typedef struct PPSSignaturePoint PPSSignaturePoint;
 
@@ -67,7 +75,7 @@ static GLKVector3 perpendicular(PPSSignaturePoint p1, PPSSignaturePoint p2) {
 }
 
 static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVector3 color) {
-
+    
     return (PPSSignaturePoint) {
         {
             (viewPoint.x / bounds.size.width * 2.0 - 1),
@@ -127,7 +135,7 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
         
         self.context = context;
         self.drawableDepthFormat = GLKViewDrawableDepthFormat24;
-		self.enableSetNeedsDisplay = YES;
+        self.enableSetNeedsDisplay = YES;
         
         // Turn on antialiasing
         self.drawableMultisample = GLKViewDrawableMultisample4X;
@@ -175,7 +183,7 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
     if ([EAGLContext currentContext] == context) {
         [EAGLContext setCurrentContext:nil];
     }
-	context = nil;
+    context = nil;
 }
 
 
@@ -183,7 +191,7 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
 {
     glClearColor(clearColor[0], clearColor[1], clearColor[2], clearColor[3]);
     glClear(GL_COLOR_BUFFER_BIT);
-
+    
     [effect prepareToDraw];
     
     // Drawing of signature lines
@@ -191,7 +199,7 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
         glBindVertexArrayOES(vertexArray);
         glDrawArrays(GL_TRIANGLE_STRIP, 0, length);
     }
-
+    
     if (dotsLength > 0) {
         glBindVertexArrayOES(dotsArray);
         glDrawArrays(GL_TRIANGLE_STRIP, 0, dotsLength);
@@ -203,26 +211,26 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
     length = 0;
     dotsLength = 0;
     self.hasSignature = NO;
-	
-	[self setNeedsDisplay];
+    
+    [self setNeedsDisplay];
 }
 
 
 
 - (UIImage *)signatureImage
 {
-	if (!self.hasSignature)
-		return nil;
-
-//    self.hidden = YES;
-//
-//    self.strokeColor = [UIColor whiteColor];
-//    [self setNeedsDisplay];
+    if (!self.hasSignature)
+        return nil;
+    
+    //    self.hidden = YES;
+    //
+    //    self.strokeColor = [UIColor whiteColor];
+    //    [self setNeedsDisplay];
     UIImage *screenshot = [self snapshot];
     
-//    self.strokeColor = nil;
-//
-//    self.hidden = NO;
+    //    self.strokeColor = nil;
+    //
+    //    self.hidden = NO;
     return screenshot;
 }
 
@@ -242,7 +250,7 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
         PPSSignaturePoint centerPoint = touchPoint;
         centerPoint.color = StrokeColor;
         addVertex(&dotsLength, centerPoint);
-
+        
         static int segments = 20;
         GLKVector2 radius = (GLKVector2){
             clamp(0.00001, 0.02, penThickness * generateRandom(0.5, 1.5)),
@@ -262,7 +270,7 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
             
             angle += M_PI * 2.0 / segments;
         }
-               
+        
         addVertex(&dotsLength, touchPoint);
         
         glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -287,8 +295,8 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
     float distance = 0.;
     if (previousPoint.x > 0) {
         distance = sqrtf((l.x - previousPoint.x) * (l.x - previousPoint.x) + (l.y - previousPoint.y) * (l.y - previousPoint.y));
-    }    
-
+    }
+    
     float velocityMagnitude = sqrtf(v.x*v.x + v.y*v.y);
     float clampedVelocityMagnitude = clamp(VELOCITY_CLAMP_MIN, VELOCITY_CLAMP_MAX, velocityMagnitude);
     float normalizedVelocity = (clampedVelocityMagnitude - VELOCITY_CLAMP_MIN) / (VELOCITY_CLAMP_MAX - VELOCITY_CLAMP_MIN);
@@ -308,8 +316,8 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
         
         addVertex(&length, startPoint);
         addVertex(&length, previousVertex);
-		
-		self.hasSignature = YES;
+        
+        self.hasSignature = YES;
         
     } else if ([p state] == UIGestureRecognizerStateChanged) {
         
@@ -341,13 +349,13 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
             PPSSignaturePoint v = ViewPointToGL(l, self.bounds, StrokeColor);
             [self addTriangleStripPointsForPrevious:previousVertex next:v];
             
-            previousVertex = v;            
+            previousVertex = v;
             previousThickness = penThickness;
         }
         
         previousPoint = l;
         previousMidPoint = mid;
-
+        
     } else if (p.state == UIGestureRecognizerStateEnded | p.state == UIGestureRecognizerStateCancelled) {
         
         PPSSignaturePoint v = ViewPointToGL(l, self.bounds, (GLKVector3){1, 1, 1});
@@ -357,7 +365,7 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
         addVertex(&length, previousVertex);
     }
     
-	[self setNeedsDisplay];
+    [self setNeedsDisplay];
 }
 
 
@@ -397,8 +405,8 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
 - (void)bindShaderAttributes {
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(PPSSignaturePoint), 0);
-//    glEnableVertexAttribArray(GLKVertexAttribColor);
-//    glVertexAttribPointer(GLKVertexAttribColor, 3, GL_FLOAT, GL_FALSE,  6 * sizeof(GLfloat), (char *)12);
+    //    glEnableVertexAttribArray(GLKVertexAttribColor);
+    //    glVertexAttribPointer(GLKVertexAttribColor, 3, GL_FLOAT, GL_FALSE,  6 * sizeof(GLfloat), (char *)12);
 }
 
 - (void)setupGL
@@ -408,7 +416,7 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
     effect = [[GLKBaseEffect alloc] init];
     
     [self updateStrokeColor];
-
+    
     
     glDisable(GL_DEPTH_TEST);
     
@@ -433,8 +441,8 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
     
     
     glBindVertexArrayOES(0);
-
-
+    
+    
     // Perspective
     GLKMatrix4 ortho = GLKMatrix4MakeOrtho(-1, 1, -1, 1, 0.1f, 2.0f);
     effect.transform.projectionMatrix = ortho;
@@ -464,7 +472,7 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
         
         difX = difX * ratio;
         difY = difY * ratio;
-                
+        
         PPSSignaturePoint stripPoint = {
             { p1.x + difX, p1.y + difY, 0.0 },
             StrokeColor
@@ -490,3 +498,4 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
 }
 
 @end
+

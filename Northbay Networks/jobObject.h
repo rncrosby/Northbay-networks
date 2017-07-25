@@ -25,8 +25,9 @@
 @property (nonatomic, strong) NSNumber *isComplete;
 @property (nonatomic, strong) NSString *signature;
 @property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSString *instructions;
 
--(instancetype)initWithType:(NSString*)type andPerson:(NSString*)person andAddress:(NSString*)address andCompany:(NSString*)company andDate:(NSString*)date andHour:(NSNumber*)hour andMinutes:(NSNumber*)minutes andDuration:(NSNumber*)duration andInfo:(NSString*)info andDateIndex:(NSString*)dateIndex andPlainTime:(NSString*)plainTime andIsComplete:(NSNumber*)isComplete andSignature:(NSString*)signature andItems:(NSArray*)items;
+-(instancetype)initWithType:(NSString*)type andPerson:(NSString*)person andAddress:(NSString*)address andCompany:(NSString*)company andDate:(NSString*)date andHour:(NSNumber*)hour andMinutes:(NSNumber*)minutes andDuration:(NSNumber*)duration andInfo:(NSString*)info andDateIndex:(NSString*)dateIndex andPlainTime:(NSString*)plainTime andIsComplete:(NSNumber*)isComplete andSignature:(NSString*)signature andItems:(NSArray*)items andInstructions:(NSString*)instructions;
 -(int)getRows;
 
 @end

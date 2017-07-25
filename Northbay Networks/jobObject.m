@@ -11,7 +11,7 @@
 @implementation jobObject
 
 
--(instancetype)initWithType:(NSString*)type andPerson:(NSString*)person andAddress:(NSString*)address andCompany:(NSString*)company andDate:(NSString*)date andHour:(NSNumber*)hour andMinutes:(NSNumber*)minutes andDuration:(NSNumber*)duration andInfo:(NSString*)info andDateIndex:(NSString*)dateIndex andPlainTime:(NSString*)plainTime andIsComplete:(NSNumber*)isComplete andSignature:(NSString*)signature andItems:(NSArray*)items {
+-(instancetype)initWithType:(NSString*)type andPerson:(NSString*)person andAddress:(NSString*)address andCompany:(NSString*)company andDate:(NSString*)date andHour:(NSNumber*)hour andMinutes:(NSNumber*)minutes andDuration:(NSNumber*)duration andInfo:(NSString*)info andDateIndex:(NSString*)dateIndex andPlainTime:(NSString*)plainTime andIsComplete:(NSNumber*)isComplete andSignature:(NSString*)signature andItems:(NSArray*)items andInstructions:(NSString*)instructions{
     self = [super init];
     if(self)
     {
@@ -29,6 +29,7 @@
         self.isComplete = isComplete;
         self.signature = signature;
         self.items = items;
+        self.instructions = instructions;
         self.code = [References randomStringWithLength:4];
     }
     return self;

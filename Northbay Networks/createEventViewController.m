@@ -188,6 +188,7 @@
     postRecord[@"minutes"] = [NSNumber numberWithDouble:startMinutes];
     postRecord[@"duration"] = [NSNumber numberWithDouble:durationNumber];
     postRecord[@"info"] = @"Info";
+    postRecord[@"instructions"] = instructionsField.text;
     postRecord[@"isComplete"] = [NSNumber numberWithBool:FALSE];
     CKDatabase *publicDatabase = [[CKContainer defaultContainer] publicCloudDatabase];
     [publicDatabase saveRecord:postRecord completionHandler:^(CKRecord *record, NSError *error) {
@@ -207,8 +208,14 @@
     }];
 }
 
-- (IBAction)dateDone:(id)sender {
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    
+    return YES;
 }
 
 - (IBAction)changeType:(UISegmentedControl *)sender {
