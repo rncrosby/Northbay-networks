@@ -12,8 +12,9 @@
 #import <MapKit/MapKit.h>
 #import "PPSSignatureView.h"
 #import <CloudKit/CloudKit.h>
+#import "itemsCell.h"
 
-@interface eventViewController : UIViewController
+@interface eventViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 {
     IBOutlet UILabel *blur;
     IBOutlet UILabel *titleText;
@@ -25,6 +26,7 @@
     IBOutlet UIButton *confirm;
     IBOutlet UIView *signatureView;
     PPSSignatureView *sign;
+    IBOutlet UITableView *table;
 }
 
 - (IBAction)confirm:(id _Nonnull )sender;

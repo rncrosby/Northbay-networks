@@ -183,6 +183,7 @@
     postRecord[@"company"] = company.text;
     postRecord[@"dateIndex"] = monthDateIndex;
     postRecord[@"plainTime"] = plainText;
+    postRecord[@"invoice"] = items;
     postRecord[@"hour"] = [NSNumber numberWithDouble:startHour];
     postRecord[@"minutes"] = [NSNumber numberWithDouble:startMinutes];
     postRecord[@"duration"] = [NSNumber numberWithDouble:durationNumber];

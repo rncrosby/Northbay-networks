@@ -14,12 +14,13 @@
 
 @implementation eventViewController
 
+
 - (void)viewDidLoad {
     [References createLine:self.view xPos:0 yPos:blur.frame.origin.y+blur.frame.size.height inFront:TRUE];
     [References cornerRadius:map radius:8.0f];
     [References cornerRadius:signatureView radius:8.0f];
     [References cornerRadius:confirm radius:8.0f];
-    scroll.contentSize = CGSizeMake([References screenWidth], [self.view viewWithTag:4].frame.origin.y + 1000);
+    scroll.contentSize = CGSizeMake([References screenWidth], [self.view viewWithTag:5].frame.origin.y + [self.view viewWithTag:5].frame.size.height + 8);
     scroll.frame = CGRectMake(0, 0, [References screenWidth], [References screenHeight]);
     [References blurView:blur];
     titleText.text = _job.company;
@@ -109,5 +110,38 @@
 
 - (IBAction)backButton:(id _Nonnull )sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 36;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (_job.items.count == 0) {
+        return 1;
+    } else {
+        table.frame = CGRectMake(table.frame.origin.x, table.frame.origin.y, table.frame.size.width, 36*_job.items.count);
+        return _job.items.count;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"itemsCell";
+    
+    itemsCell *cell = (itemsCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"itemsCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    cell.backgroundColor = [UIColor clearColor];
+    if (_job.items.count > 0) {
+        cell.itemText.text = _job.items[indexPath.row];
+        
+    }
+    
+    
+    return cell;
 }
 @end
